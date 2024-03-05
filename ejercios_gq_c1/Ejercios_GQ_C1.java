@@ -72,9 +72,9 @@ public class Ejercios_GQ_C1 {
         /* 5.*/
         int[] numeros = new int[1000];
         
-        for (int i = 0; i < numeros.lenght; i++) {
+        for (int i = 0; i < numeros.length; i++) {
             
-            numeros[i] = 1;
+            numeros[i] = i;
             
         }
         MediaHilo_GQ mh1 = new MediaHilo_GQ(numeros, 0, 250);
