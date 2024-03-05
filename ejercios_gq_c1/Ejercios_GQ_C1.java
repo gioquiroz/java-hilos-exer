@@ -77,11 +77,14 @@ public class Ejercios_GQ_C1 {
             numeros[i] = i;
             
         }
+        
+        // Se declaran 4 nuevos hilos para poder que cada uno ataque una zona diferente del arreglo y no tardar tanto entregando un resultado.
         MediaHilo_GQ mh1 = new MediaHilo_GQ(numeros, 0, 250);
         MediaHilo_GQ mh2 = new MediaHilo_GQ(numeros, 250, 500);
         MediaHilo_GQ mh3 = new MediaHilo_GQ(numeros, 500, 750);
         MediaHilo_GQ mh4 = new MediaHilo_GQ(numeros, 750, 1000);
         
+        // Metodo para inicar los hilos
         mh1.start();
         mh2.start();
         mh3.start();
@@ -101,10 +104,13 @@ public class Ejercios_GQ_C1 {
             double r3 = mh3.getResultado();
             double r4 = mh4.getResultado();
             
+            // Se acumula el resultado de cada ataque de zona en media  y se dive entre 4 para obtener resultado final.
             double media = (r1 + r2 + r3 + r4) / 4;
             System.out.println("Media: " + media);
             
-        } catch (InterruptedException ex) {
+        } 
+        // Caso de que algo falle nos arroja este mensaje.
+        catch (InterruptedException ex) {
             System.out.println(ex.getMessage());
         }
     }
